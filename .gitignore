@@ -1,0 +1,23 @@
+# Slide kuliah (materi dosen, tidak ikut didistribusikan lewat repo)
+docs/*.pdf
+
+# File sementara editor / OS / Python
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Data, bobot, dan output besar (diunduh/dihasilkan di Kaggle)
+*.zip
+*.pt
+*.pth
+*.safetensors
+data/
+runs/
+
+# Foto asli test_own dari HP: EXIF-nya bisa berisi lokasi GPS.
+# Simpan di sini (tidak ikut repo); untuk bukti EXIF, lampirkan tangkapan layar/tabel EXIF tanpa GPS.
+test_own_asli/
