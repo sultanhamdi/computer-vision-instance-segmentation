@@ -21,3 +21,5 @@ runs/
 # Foto asli test_own dari HP: EXIF-nya bisa berisi lokasi GPS.
 # Simpan di sini (tidak ikut repo); untuk bukti EXIF, lampirkan tangkapan layar/tabel EXIF tanpa GPS.
 test_own_asli/
+# Foto test_own (12 MP, ~200 MB) tidak masuk Git; tabel EXIF-nya (exif_test_own.csv) tetap di-commit.
+test own/*.jpg
