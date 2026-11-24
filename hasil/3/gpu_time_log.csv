@@ -1,0 +1,4 @@
+model,job,kind,gpu_index,gpu_name,start,end,hours,returncode
+mask2former_swin_t,mask2former_swin_t_100,predict,0,Tesla T4,2026-11-24T15:06:38,2026-11-24T15:10:01,0.0563,0
+mask2former_swin_t,mask2former_swin_t_025,predict,1,Tesla T4,2026-11-24T15:06:38,2026-11-24T15:10:01,0.0563,0
+mask2former_swin_t,mask2former_swin_t_050,predict,1,Tesla T4,2026-11-24T15:10:01,2026-11-24T15:13:01,0.05,0

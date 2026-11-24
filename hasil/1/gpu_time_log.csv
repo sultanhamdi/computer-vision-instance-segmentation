@@ -1,0 +1,4 @@
+model,job,kind,gpu_index,gpu_name,start,end,hours,returncode
+yolo11m_seg,yolo11m_seg_100,predict,0,Tesla T4,2026-11-24T14:36:41,2026-11-24T14:39:20,0.0443,0
+yolo11m_seg,yolo11m_seg_025,predict,1,Tesla T4,2026-11-24T14:36:41,2026-11-24T14:39:20,0.0443,0
+yolo11m_seg,yolo11m_seg_050,predict,1,Tesla T4,2026-11-24T14:39:20,2026-11-24T14:41:49,0.0414,0

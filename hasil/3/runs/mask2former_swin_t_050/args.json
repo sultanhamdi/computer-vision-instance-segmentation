@@ -1,0 +1,24 @@
+{
+  "mode": "train",
+  "tag": "050",
+  "name": "mask2former_swin_t_050",
+  "data_root": "/tmp/data",
+  "out": "/kaggle/working/runs",
+  "weights": "facebook/mask2former-swin-tiny-coco-instance",
+  "epochs": 60,
+  "batch": 4,
+  "lr": 0.0001,
+  "backbone_lr_mult": 0.1,
+  "wd": 0.05,
+  "clip": 0.01,
+  "imgsz": 640,
+  "workers": 2,
+  "seed": 42,
+  "eval_every": 2,
+  "max_hours": 3.0,
+  "amp": true,
+  "splits": [
+    "valid",
+    "test"
+  ]
+}

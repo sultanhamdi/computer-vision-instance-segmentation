@@ -1,0 +1,4 @@
+model,job,kind,gpu_index,gpu_name,start,end,hours,returncode
+mask_rcnn_r50,mask_rcnn_r50_100,predict,0,Tesla T4,2026-11-24T13:36:46,2026-11-24T13:40:11,0.057,0
+mask_rcnn_r50,mask_rcnn_r50_025,predict,1,Tesla T4,2026-11-24T13:36:46,2026-11-24T13:40:11,0.057,0
+mask_rcnn_r50,mask_rcnn_r50_050,predict,1,Tesla T4,2026-11-24T13:40:11,2026-11-24T13:43:18,0.052,0

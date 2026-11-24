@@ -1,0 +1,9 @@
+{
+  "tag": "100",
+  "epochs_planned": 70,
+  "epochs_done": 70,
+  "stopped_by_time": false,
+  "best_val_segm_AP": 0.22581,
+  "train_hours": 1.2464,
+  "train_images": 395
+}

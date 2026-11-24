@@ -1,0 +1,8 @@
+{
+  "tag": "025",
+  "epochs_planned": 150,
+  "epochs_done": 150,
+  "stopped_by_time": false,
+  "train_hours": 0.4188,
+  "train_images": 99
+}
