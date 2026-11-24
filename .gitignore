@@ -24,3 +24,7 @@ test_own_asli/
 # Foto test_own (12 MP, ~200 MB) tidak masuk Git; tabel EXIF-nya (exif_test_own.csv) tetap di-commit.
 test own/*.jpg
 test own/raw/
+
+
+AGENTS.md
+CLAUDE.md
