@@ -1,5 +1,6 @@
 # Slide kuliah (materi dosen, tidak ikut didistribusikan lewat repo)
 docs/*.pdf
+PANDUAN_DEMO.md
 
 # File sementara editor / OS / Python
 .ipynb_checkpoints/
