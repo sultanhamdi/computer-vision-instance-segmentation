@@ -85,4 +85,11 @@ Sumber: log `gpu_time_log.csv` pada output `hasil/1`–`hasil/3` dan `hasil/4/re
 | `8ba8ec7` | 2026-11-24 20:10 | `test_own`: anotasi Roboflow (40 foto, 276 poligon, 35 kelas) dan daftar objek |
 | `3002907` | 2026-11-24 20:39 | Konfigurasi `test_own` (Roboflow v1) dan mode prediksi saja untuk Notebook 1–3 |
 | `a1f33be` | 2026-11-24 22:11 | Update `.gitignore` |
-| *(berikutnya)* | 2026-11-25 | Hasil final NB 0–4 (`test_own`), NB 5 demo & 5 studi kasus, logbook, deklarasi AI |
+| `2336d1b` | 2026-11-25 05:28 | Hasil final Notebook 0-3 (`test_own`) dan log training asli (`results.csv`, `gpu_time_log`) |
+| `713ab07` | 2026-11-25 05:28 | Hasil final Notebook 4: perbandingan 3 model, domain shift, dan kondisi sulit `test_own` |
+| `0bafeef` | 2026-11-25 05:28 | Notebook 5: demo inferensi langsung dan eksperimen 5 studi kasus kegagalan `test_own` |
+| `3b1fa66` | 2026-11-25 05:28 | Tambah logbook eksperimen (hipotesis, waktu GPU) dan deklarasi penggunaan AI |
+| `d73f79e` | 2026-11-25 05:43 | Update README dengan ringkasan hasil akhir |
+| `2bd8c97` | 2026-11-25 05:43 | Update `.gitignore` |
+| `d2d54e4` | 2026-11-25 09:44 | Fix minor grammar issue |
+| `86b8905` | 2026-11-25 09:53 | Another update on docs (tambah Kasus 5 kesalahan AI) |
