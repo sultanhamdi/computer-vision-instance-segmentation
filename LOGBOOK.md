@@ -1,6 +1,6 @@
-# Logbook Eksperimen — Segmentasi Instance pada Lingkungan Indoor Nyata
+# Logbook Eksperimen: Segmentasi Instance pada Lingkungan Indoor Nyata
 
-- **Mata Kuliah:** Visi Komputer — Evaluasi CPMK 3 (ITS)
+- **Mata Kuliah:** Visi Komputer, Evaluasi CPMK 3 (ITS)
 - **Variabel Wajib (Digit Terakhir NRP = 3):** Jumlah data latih bertingkat **25% / 50% / 100%** (99 / 198 / 395 gambar, 25% ⊂ 50% ⊂ 100%, `seed = 42`)
 - **Dataset Latih:** Panoptic Indoor Segmentation v5 (Roboflow, `panopticindoor/panoptic-indoor-segmentation`), 74 kelas dipakai (9 kelas tidak memiliki contoh di train)
 - **Model:** YOLO11m-seg (one-stage CNN), Mask R-CNN R50-FPN v2 (two-stage CNN), Mask2Former Swin-T (transformer)
@@ -20,14 +20,14 @@
 
 ## 2. Catatan Proses Kronologis
 
-### Tahap 1 — Persiapan Data & Verifikasi Format (2026-11-15)
+### Tahap 1: Persiapan Data & Verifikasi Format (2026-11-15)
 - Membuat **Notebook 0** (`00_data_prep.ipynb`) untuk mengunduh dataset Roboflow, membersihkan anotasi, membuat subset bertingkat 25%/50%/100% (`seed=42`), dan mengonversi format COCO ke YOLO-seg.
 - **Temuan & keputusan:**
   1. Ditemukan 1 gambar `test` dengan 111 instance `book`, sehingga evaluasi GT-vs-GT dengan batas standar COCO `maxDets=100` menghasilkan 0,9994 (bukan 1,0). Verifikasi format di NB 0 menggunakan `maxDets=10000`, sementara evaluasi model tetap memakai standar COCO `maxDets=100`.
   2. Ditemukan 4 gambar `train`/`valid` berukuran fisik 480×640 sedangkan JSON mencatat 640×480 **tanpa tag rotasi EXIF**. Keempat gambar dibuang agar tidak merusak mask training.
   3. Disusun modul bersama `seg_common.py` (identik di NB 1–3) agar ketiga model dievaluasi dengan `pycocotools` yang persis sama (`segm`, area dari mask, `maxDets=100`, `score >= 0,001`).
 
-### Tahap 2 — Pilot & Training Penuh 3 Model × 3 Fraksi (2026-11-15)
+### Tahap 2: Pilot & Training Penuh 3 Model × 3 Fraksi (2026-11-15)
 - Menjalankan pilot 2 epoch (target durasi ~2 jam untuk run 100%) untuk menentukan jumlah epoch final:
   - **YOLO11m-seg:** 150 epoch (pilot ~0,7 mnt/epoch).
   - **Mask R-CNN R50-FPN v2:** 70 epoch (pilot 3,3 mnt / 2 epoch).
@@ -35,19 +35,19 @@
 - Menjalankan training penuh 9 run (3 model × 3 fraksi) pada 15 Nov 2026 (07:51–12:22 UTC).
 - **Kendala:** Tahap prediksi `test` pada Mask2Former gagal (`returncode=1`, CUDA OOM) karena split `test` memiliki gambar hingga 10,3 MP; upsample 100 query mask sekaligus membutuhkan ±1,3 GB/MP.
 
-### Tahap 3 — Perbaikan OOM Mask2Former & Evaluasi Awal (2026-11-17)
+### Tahap 3: Perbaikan OOM Mask2Former & Evaluasi Awal (2026-11-17)
 - Memperbaiki `instance_inference` di **Notebook 3** agar melakukan upsample mask per potongan `chunk=10` query lalu menyalin mask biner ke CPU (hasil matematis identik, VRAM turun 10×).
 - Menjalankan ulang prediksi `valid` dan `test` Mask2Former (17 Nov 2026, 23:10–23:16 UTC) dengan `RUN_TRAINING = False` → sukses tanpa error.
 - Membuat **Notebook 4** (`04_perbandingan.ipynb`) untuk perbandingan awal pada `valid` dan `test`.
 
-### Tahap 4 — Pengambilan Foto HP, Anotasi Roboflow, & Evaluasi `test_own` (2026-11-24)
+### Tahap 4: Pengambilan Foto HP, Anotasi Roboflow, & Evaluasi `test_own` (2026-11-24)
 - Mengambil 40 foto lingkungan indoor nyata dengan kamera HP sendiri: `normal` (19), `redup` (11), `oklusi` (5), `backlight` (3), `silau` (1), `sudut` (1).
 - Mengekstrak metadata EXIF (tanpa lokasi GPS) ke `test own/exif_test_own.csv`; foto asli 12 MP diabaikan Git (`.gitignore`) demi privasi.
 - Menganotasi 40 foto di Roboflow (`sultan-hamdi-jailani/cv_instance_seg` v1): **276 poligon, 35 kelas** (semua termasuk 74 kelas dataset; rata-rata 6,9 anotasi/foto; 3 kelas tanpa contoh di train: `mouse`, `toothbrush`, `scissors`). Dokumentasi di `test own/daftar_objek.md`.
 - Memperbarui konfigurasi NB 0 untuk mengunduh `test_own` dan menjalankan ulang NB 0 → NB 1–3 (`RUN_TRAINING = False`, prediksi saja) → NB 4.
 - **Kendala kecil:** Save & Run All sempat antre (*queued*) di Kaggle; selain itu run pertama NB 4 masih memakai daftar `CONDITIONS` lama sehingga `redup`/`backlight`/`sudut` masuk kelompok `lainnya`.
 
-### Tahap 5 — Perbaikan NB 4 & Pembuatan NB 5 Demo + 5 Studi Kasus (2026-11-25)
+### Tahap 5: Perbaikan NB 4 & Pembuatan NB 5 Demo + 5 Studi Kasus (2026-11-25)
 - Menjalankan ulang NB 4 dengan versi `CONDITIONS` terbaru (`hasil/4/cv-is-perbandingan-final-2.ipynb`, `hasil/4/results-2/`) → keenam kondisi `test_own` terpisah rapi, 0 error.
 - Membuat **Notebook 5** (`05_demo_dan_studi_kasus.ipynb`) berisi demo langsung 10 menit (inferensi foto baru, ubah threshold, AP satu kelas, penjelasan baris kode) serta 5 eksperimen pembuktian kegagalan (`oklusi_03`, `normal_14`, `oklusi_04`, `redup_07`, `silau_01`).
 - **Kendala kecil:** Error `KeyError: 'id'` di sel konfigurasi NB 5 karena `dataset_info.json` memakai kunci `"coco_id"`. Diperbaiki → run penuh di Kaggle (`hasil/5/cv-is-demo.ipynb`) selesai bersih (0 error).

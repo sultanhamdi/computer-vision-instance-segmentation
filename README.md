@@ -14,7 +14,7 @@ Seluruh model dievaluasi secara seragam menggunakan `pycocotools` (`seg_common.p
 
 ## Ringkasan Hasil Utama
 
-### 1. Pengaruh Jumlah Data Latih (25% / 50% / 100%) — Mask AP (`mAP@[.50:.95]`)
+### 1. Pengaruh Jumlah Data Latih (25% / 50% / 100%): Mask AP (`mAP@[.50:.95]`)
 
 | Model | `valid` (25% / 50% / 100%) | `test` (25% / 50% / 100%) | `test_own` (25% / 50% / 100%) | Kenaikan 25→100% (`test_own`) |
 |---|---:|---:|---:|---:|
@@ -61,10 +61,10 @@ Dijalankan langsung pada bobot 100% di [`notebooks/05_demo_dan_studi_kasus.ipynb
 
 ## Dokumen Pendukung & Bukti Proses
 
-- [`PANDUAN_DEMO.md`](PANDUAN_DEMO.md) — Penjelasan lengkap tugas dari deskripsi hingga kesimpulan + panduan demo langsung 10 menit.
-- [`LOGBOOK.md`](LOGBOOK.md) — Hipotesis bertanggal (H1–H3), kronologi proses, rekap waktu GPU (~9,37 jam-GPU total), kendala & keputusan, riwayat commit.
-- [`DEKLARASI_AI.md`](DEKLARASI_AI.md) — Deklarasi transparan penggunaan AI, prompt utama, dan 4 kasus nyata saran/kode AI yang salah beserta perbaikannya.
-- [`test own/exif_test_own.csv`](test%20own/exif_test_own.csv) & [`test own/daftar_objek.md`](test%20own/daftar_objek.md) — Bukti EXIF (tanpa GPS) dan daftar lengkap 276 anotasi `test_own`.
+- [`PANDUAN_DEMO.md`](PANDUAN_DEMO.md): Penjelasan lengkap tugas dari deskripsi hingga kesimpulan + panduan demo langsung 10 menit.
+- [`LOGBOOK.md`](LOGBOOK.md): Hipotesis bertanggal (H1–H3), kronologi proses, rekap waktu GPU (~9,37 jam-GPU total), kendala & keputusan, riwayat commit.
+- [`DEKLARASI_AI.md`](DEKLARASI_AI.md): Deklarasi transparan penggunaan AI, prompt utama, dan 4 kasus nyata saran/kode AI yang salah beserta perbaikannya.
+- [`test own/exif_test_own.csv`](test%20own/exif_test_own.csv) & [`test own/daftar_objek.md`](test%20own/daftar_objek.md): Bukti EXIF (tanpa GPS) dan daftar lengkap 276 anotasi `test_own`.
 
 ## Struktur Repositori
 
