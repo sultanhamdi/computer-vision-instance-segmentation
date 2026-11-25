@@ -63,7 +63,7 @@ Dijalankan langsung pada bobot 100% di [`notebooks/05_demo_dan_studi_kasus.ipynb
 
 - [`PANDUAN_DEMO.md`](PANDUAN_DEMO.md): Penjelasan lengkap tugas dari deskripsi hingga kesimpulan + panduan demo langsung 10 menit.
 - [`LOGBOOK.md`](LOGBOOK.md): Hipotesis bertanggal (H1–H3), kronologi proses, rekap waktu GPU (~9,37 jam-GPU total), kendala & keputusan, riwayat commit.
-- [`DEKLARASI_AI.md`](DEKLARASI_AI.md): Deklarasi transparan penggunaan AI, prompt utama, dan 4 kasus nyata saran/kode AI yang salah beserta perbaikannya.
+- [`DEKLARASI_AI.md`](DEKLARASI_AI.md): Deklarasi transparan penggunaan AI, prompt utama, dan 5 kasus nyata saran/kode AI yang salah beserta perbaikannya.
 - [`test own/exif_test_own.csv`](test%20own/exif_test_own.csv) & [`test own/daftar_objek.md`](test%20own/daftar_objek.md): Bukti EXIF (tanpa GPS) dan daftar lengkap 276 anotasi `test_own`.
 
 ## Struktur Repositori
@@ -84,7 +84,7 @@ test own/
   exif_test_own.csv             tabel EXIF + pemetaan nama asli -> nama kondisi
   daftar_objek.md               daftar anotasi per foto dan per kelas
 LOGBOOK.md                      logbook eksperimen, hipotesis bertanggal, waktu GPU
-DEKLARASI_AI.md                 deklarasi penggunaan AI + 4 kasus kesalahan AI
+DEKLARASI_AI.md                 deklarasi penggunaan AI + 5 kasus kesalahan AI
 PANDUAN_DEMO.md                 ringkasan lengkap proyek & panduan bacaan persiapan demo 10 menit
 ```
 

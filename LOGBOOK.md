@@ -1,5 +1,5 @@
 # Logbook Eksperimen: Segmentasi Instance pada Lingkungan Indoor Nyata
-
+- **Nama:** Sultan Hamdi Jailani Daulay
 - **Mata Kuliah:** Visi Komputer, Evaluasi CPMK 3 (ITS)
 - **Variabel Wajib (Digit Terakhir NRP = 3):** Jumlah data latih bertingkat **25% / 50% / 100%** (99 / 198 / 395 gambar, 25% ⊂ 50% ⊂ 100%, `seed = 42`)
 - **Dataset Latih:** Panoptic Indoor Segmentation v5 (Roboflow, `panopticindoor/panoptic-indoor-segmentation`), 74 kelas dipakai (9 kelas tidak memiliki contoh di train)

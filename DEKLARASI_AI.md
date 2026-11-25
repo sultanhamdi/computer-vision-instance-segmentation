@@ -33,7 +33,7 @@ Dalam pengerjaan tugas Evaluasi CPMK 3 (Segmentasi Instance pada Lingkungan Indo
 
 ## 3. Kasus Konkret Saran / Kode AI yang Salah (Beserta Perbaikannya)
 
-Sesuai ketentuan tugas, berikut empat kasus nyata di mana saran atau kode AI terbukti salah saat diverifikasi terhadap data/eksekusi di Kaggle:
+Sesuai ketentuan tugas, berikut lima kasus nyata di mana saran atau kode AI terbukti salah saat diverifikasi terhadap data/eksekusi di Kaggle:
 
 ### Kasus 1: Diagnosis salah "tag rotasi EXIF" pada 4 gambar `train`/`valid`
 - **Saran AI yang salah:** Saat ditemukan 4 gambar yang ukuran filenya 480×640 sedangkan dimensi di JSON 640×480, AI langsung mendiagnosis penyebabnya adalah tag rotasi EXIF dan mengusulkan perbaikan dengan `ImageOps.exif_transpose`.
@@ -52,3 +52,8 @@ Sesuai ketentuan tugas, berikut empat kasus nyata di mana saran atau kode AI ter
 - **Kode AI yang salah:** Saat membuat `05_demo_dan_studi_kasus.ipynb`, AI menuliskan `CAT_NAME = {c["id"]: c["name"] for c in CLASSES}` tanpa memeriksa skema `dataset_info.json` yang dihasilkan Notebook 0.
 - **Fakta saat dijalankan di Kaggle:** Sel konfigurasi langsung gagal dengan `KeyError: 'id'` karena `dataset_info.json` menyimpan kunci `"coco_id"` (bukan `"id"`).
 - **Perbaikan:** Mengganti `c["id"]` menjadi `c["coco_id"]` di sel 3 Notebook 5; setelah diperbaiki, seluruh 28 sel Notebook 5 berjalan bersih dengan 0 error.
+
+### Kasus 5: Daftar objek hasil inspeksi AI pada foto `raw` `test_own` tidak akurat
+- **Saran AI yang salah:** Saat diminta mendaftar objek apa saja yang muncul pada foto-foto `raw` `test_own` sebagai acuan awal sebelum anotasi, AI menghasilkan daftar yang tidak sesuai kondisi gambar sebenarnya: beberapa objek yang jelas ada di foto terlewat (tidak tercantum di daftar), sementara beberapa label lain justru dicantumkan padahal objeknya tidak ada di foto (*hallucination*).
+- **Fakta setelah dicek:** Ketidaksesuaian ditemukan langsung saat pengecekan visual manual di editor anotasi Roboflow.
+- **Perbaikan:** Tidak mengandalkan daftar AI; seluruh 40 foto diperiksa dan dianotasi manual langsung di Roboflow (276 poligon, 35 kelas), lalu `test own/daftar_objek.md` disusun ulang dari file anotasi final `_annotations.coco.json`.
