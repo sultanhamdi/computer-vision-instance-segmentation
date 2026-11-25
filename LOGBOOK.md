@@ -96,6 +96,10 @@ Sumber: log `gpu_time_log.csv` pada output `hasil/1`–`hasil/3` dan `hasil/4/re
 | `2bd8c97` | 2026-11-25 05:43 | Update `.gitignore` |
 | `d2d54e4` | 2026-11-25 09:44 | Fix minor grammar issue |
 | `86b8905` | 2026-11-25 09:53 | Another update on docs (tambah Kasus 5 kesalahan AI) |
+| `8f43006` | 2026-11-25 09:56 | Update riwayat commit pada `LOGBOOK.md` |
+| `dd5e5cf` | 2026-11-25 19:28 | Notebook 5 final: uji inferensi foto URL eksternal dan ekstraksi gambar bukti 5 studi kasus |
+| `3dc98b5` | 2026-11-25 19:28 | Tambah bukti screenshot anotasi manual poligon `test_own` di Roboflow |
+| `8ad0649` | 2026-11-25 19:28 | Finalisasi laporan lengkap (`LOGBOOK.md` dan `LOGBOOK.pdf`) |
 
 ---
 
